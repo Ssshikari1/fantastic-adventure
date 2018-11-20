@@ -1,0 +1,9 @@
+.wrapper {
+    min-width: 200px;
+    width: 900px;
+    padding: 5px 20px;
+    margin: auto;
+    border: 1px solid white;
+    border-top: none;
+    background: #1530AE;
+}

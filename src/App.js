@@ -1,28 +1,36 @@
 import React, { Component } from 'react';
+import Navigation from './containers/navigation';
 import logo from './logo.svg';
 import './App.css';
+import BoardContainer from './containers/board';
+import ThreadContainer from './containers/thread';
+import { Link, Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <Navigation /> 
+        <Switch>
+          <Route path="/board/:slug" component={ChildBoardContainer}/>
+          <Route path="/thread" component={ChildThreadContainer}/>
+        </Switch>
       </div>
     );
   }
+}
+
+function ChildBoardContainer({match}) {
+  //console.log(match.url);
+  return (
+    <BoardContainer />
+  );
+}
+
+function ChildThreadContainer({match}) {
+  return (
+    <ThreadContainer />
+  );
 }
 
 export default App;

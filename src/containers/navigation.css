@@ -1,0 +1,18 @@
+.navbar-brand a {
+    color: black !important;
+}
+
+.navbar-brand a:hover {
+    color: black !important;
+    text-decoration: none;
+}
+
+a {
+    color: rgba(0, 0, 0, 0.5) !important;
+    
+}
+
+a:hover {
+    text-decoration: none !important;
+    color: black !important;
+}
